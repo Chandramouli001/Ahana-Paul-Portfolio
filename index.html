@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahana Paul — Indian Devotional Art, Pencil Portraits & Realistic Drawings</title>
+<meta name="description" content="Portfolio of Ahana Paul, an Indian artist creating devotional paintings of Ganesha, Kali and Hanuman, graphite portraits and realistic drawings. Commissions open.">
+<meta property="og:title" content="Ahana Paul — Indian Artist | Devotional Art & Portraits">
+<meta property="og:description" content="Devotional paintings, pencil portraits and realistic drawings, made by hand in India.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Hind:wght@400;500&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ahana Paul","jobTitle":"Artist","nationality":"Indian","knowsAbout":["Devotional art","Portrait drawing","Realistic drawing","Colour painting"]}</script>
+</head>
+<body>
+<header>
+  <a class="logo" href="#top">Ahana Paul<small>अहाना पॉल</small></a>
+  <nav aria-label="Main"><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#commission">Commission</a><button class="chip" id="theme" aria-label="Switch day or night theme">🌙</button></nav>
+</header>
+<div class="torana" aria-hidden="true"></div>
+<main id="top">
+  <section class="hero">
+    <div>
+      <span class="hi">नमस्ते 🙏</span>
+      <h1>Colours of <em>devotion</em>,<br>lines of life.</h1>
+      <p class="deva">रंग, रेखाएँ और श्रद्धा</p>
+      <p>I'm Ahana Paul. I draw gods and goddesses in bold colour, and people in soft graphite — every piece made slowly, by hand.</p>
+      <a class="btn" href="#gallery">View my art</a> <a class="btn alt" href="#commission">Commission a piece</a>
+      <div class="social" aria-label="Social links"></div>
+    </div>
+    <div class="mandala" aria-hidden="true">
+      <svg viewBox="-150 -150 300 300" class="spin">
+        <g class="draw" fill="none" stroke-width="1.6">
+          <circle r="140"/><circle r="120" stroke-dasharray="3 7"/><circle r="40"/>
+          <g id="petals"></g>
+        </g>
+      </svg>
+      <div class="sun"></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2><span>The Gallery</span><small>कलाकृतियाँ</small></h2>
+    <div class="toolbar">
+      <div class="filters" role="group" aria-label="Filter artworks">
+        <button class="chip" aria-pressed="true" data-f="all">All</button>
+        <button class="chip" aria-pressed="false" data-f="devotional">Devotional</button>
+        <button class="chip" aria-pressed="false" data-f="portrait">Portraits</button>
+        <button class="chip" aria-pressed="false" data-f="realistic">Realistic</button>
+        <button class="chip" aria-pressed="false" data-f="colour">Colourful</button>
+      </div>
+      <button class="btn sm" id="addBtn" style="display: none;">+ Add artwork</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="about">
+    <h2><span>About the Artist</span><small>कलाकार</small></h2>
+    <div class="about">
+      <div>
+        <p>Art, for me, is a form of prayer. My devotional paintings of Ganesha, Kali, Hanuman and Krishna pour out in vivid colour, while my portraits stay quiet — black graphite, soft light, honest faces.</p>
+        <p>Whether it's a deity for your home mandir or a portrait of someone you love, each piece is drawn with patience and care.</p>
+        <div class="tiles">
+          <div><b>🪔</b>Devotional art</div><div><b>✏️</b>Pencil portraits</div><div><b>🎨</b>Colour studies</div>
+        </div>
+      </div>
+      <div class="stats"><div><b data-n="100">0</b>artworks</div><div><b data-n="7">0</b>years drawing</div><div><b data-n="30">0</b>commissions</div></div>
+    </div>
+  </section>
+
+  <section id="commission">
+    <h2><span>Commission a Piece</span><small>आदेश</small></h2>
+    <form id="cf">
+      <input name="n" placeholder="Your name" required aria-label="Your name">
+      <input name="e" type="email" placeholder="Email" required aria-label="Email">
+      <select name="s" aria-label="Type of artwork"><option>Devotional painting</option><option>Pencil portrait (B&amp;W)</option><option>Realistic drawing</option><option>Colourful illustration</option></select>
+      <textarea name="m" rows="4" placeholder="Tell me about your idea, size and deadline…" required aria-label="Message"></textarea>
+      <button class="btn" type="submit">Send request</button>
+    </form>
+  </section>
+</main>
+<footer><div class="torana flip" aria-hidden="true"></div><p class="deva">कला ही साधना है</p><div class="social"></div><p>© <span id="y"></span> Ahana Paul · All artwork is copyrighted by the artist.</p></footer>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <form method="dialog" id="up">
+    <h3 id="dt">Add an artwork</h3>
+    <label class="drop" id="drop" for="file">
+      <img id="prev" alt="Preview" hidden>
+      <span id="dropTxt">Click to choose an image, or drag &amp; drop it here<br><small>JPG, PNG, WEBP or GIF · up to 10 MB</small></span>
+    </label>
+    <input type="file" id="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+    <p id="err" role="alert"></p>
+    <input id="ft" placeholder="Title (e.g. Lord Ganesha)" required>
+    <select id="fc" aria-label="Category"><option value="devotional">Devotional</option><option value="portrait">Portrait</option><option value="realistic">Realistic</option><option value="colour">Colourful</option></select>
+    <label class="chk"><input type="checkbox" id="fb"> This is a black &amp; white artwork</label>
+    <input id="fa" placeholder="Describe the image (alt text for accessibility &amp; SEO)">
+    <div class="row"><button type="button" class="btn sm alt" id="cancel">Cancel</button><button class="btn sm" id="save" disabled>Add to gallery</button></div>
+  </form>
+</dialog>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+  <button class="x" aria-label="Close">✕</button><button class="p" aria-label="Previous">‹</button>
+  <figure><img id="li" alt=""><figcaption id="lc"></figcaption></figure>
+  <button class="n" aria-label="Next">›</button>
+</div>
+<script src="artworks.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
